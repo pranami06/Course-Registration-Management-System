@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="scrs@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="scrs">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="melodyhub"/>
+    <schema id="5" parent="1" name="moviestreaming"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="phpmyadmin"/>
+    <schema id="9" parent="1" name="test"/>
+    <schema id="10" parent="1" name="usermanager"/>
+    <table id="11" parent="2" name="course_info"/>
+    <table id="12" parent="2" name="student_info"/>
+    <column id="13" parent="11" name="CRN">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="11" name="Course_Title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="11" name="Course_Desc">
+      <Position>3</Position>
+      <Comment>CourseDescription</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="11" name="Prof_Info">
+      <Position>4</Position>
+      <Comment>ProfessorInformation</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="11" name="Course_cost">
+      <Position>5</Position>
+      <Comment>CourseCost</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="11" name="Course_Loc">
+      <Position>6</Position>
+      <Comment>CourseLocation</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="19" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CRN</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="20" parent="12" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="12" name="F_Name">
+      <Position>2</Position>
+      <Comment>FirstName</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="12" name="L_Name">
+      <Position>3</Position>
+      <Comment>LastName</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="12" name="Address">
+      <Position>4</Position>
+      <Comment>Address</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="12" name="Email">
+      <Position>5</Position>
+      <Comment>Email</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="12" name="CRN">
+      <Position>6</Position>
+      <Comment>CourseNumber</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="26" parent="12" name="FOREIGN KEY">
+      <ColNames>CRN</ColNames>
+    </index>
+    <key id="27" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="28" parent="12" name="FK_CRN_Course">
+      <ColNames>CRN</ColNames>
+      <RefSchemaName>scrs</RefSchemaName>
+      <RefTableName>course_info</RefTableName>
+      <RefColNames>CRN</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
